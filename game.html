@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trivia Master</title>
+	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Da" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=UnifrakturMaguntia" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mystery+Quest" rel="stylesheet">
+
+</head>
+<body id="gamePage" hidden>
+	
+	<header>
+		<div id="menu">&#8681;</div>
+		<h1>Trivia Master</h1>
+	</header>
+
+	<section id="playerInfo" hidden>
+		<img id="profile" src="">
+		<span id="name">Player</span>
+		<ul>
+			<div id="basicInfo">
+				<li>LV:&nbsp;&nbsp;<span id="level"></span></li>
+				<li>EXP:&nbsp;&nbsp; <span id="expNeeded"></span><span>/</span><span id="exp"></span></li>
+				<li>HP:&nbsp;&nbsp; <span id="maxHp"></span><span>/</span><span id="hp"></span></li>
+				<li>COINS:&nbsp;&nbsp; <span id="coins"></span></li>
+			</div>
+			<div id="itemMenu" hidden>
+				<li id="items">ITEMS</li>
+				<ul id="itemList">
+					<li>Hints: <span id="hints"></span></li>
+					<li>Potion: <span id="potion"></span></li>
+					<li>Magic Capsule: <span id="capsule"></span></li>
+					<li>Elixir: <span id="elixir"></span></li>
+				</ul>
+				<div class="confirmUseItem" id="useHint" hidden>
+					<p>Use this item?</p>
+					<div class="yes">yes</div>
+					<div class="no">no</div>
+				</div>
+				<div class="confirmUseItem" id="usePotion" hidden>
+					<p>Use this item?</p>
+					<div class="yes">yes</div>
+					<div class="no">no</div>
+				</div>
+				<div class="confirmUseItem" id="useCapsule" hidden>
+					<p>Use this item?</p>
+					<div class="yes">yes</div>
+					<div class="no">no</div>
+				</div>
+				<div class="confirmUseItem" id="useElixir" hidden>
+					<p>Your HP is 0 now</p>
+					<p>Want to use elixir?</p>
+					<div class="yes">yes</div>
+					<div class="no">no</div>
+				</div>
+			</div>
+			<div id="storeMenu" hidden>
+				<li id="store" >STORE</li>
+				<ul id="productList">
+				<li value="hints">Hints: <span id="hintPrice">10</span></li>
+				<li value="potion">Potion: <span id="potionPrice">15</span></li>
+				<li value="capsule">Magic Capsule: <span id="capsulePrice">50</span></li>
+				<li value="elixir">Elixir: <span id="elixirPrice">30</span></li>
+			</ul>
+			</div>
+
+		</ul>
+	</section>
+
+	<section id="gameArea">
+		<dir class="setQuiz" id="setCategory">
+			<p></p>
+			<ul hidden>
+				<li>Any Category</li>
+				<li value="9">General Knowledge</li>
+				<li value="10">Books</li>
+				<li value="11">Film</li>
+				<li value="12">Music</li>
+				<li value="13">Musicals &amp; Theaters</li>
+				<li value="14">Television</li>
+				<li value="15">Video Games</li>
+				<li value="16">Board Games</li>
+				<li value="17">Science &amp; Nature</li>
+				<li value="18">Computers</li>
+				<li value="19">Mathematics</li>
+				<li value="20">Mythology</li>
+				<li value="21">Sports</li>
+				<li value="22">Geography</li>
+				<li value="23">History</li>
+				<li value="24">Politics</li>
+				<li value="25">Art</li>
+				<li value="26">Celebrities</li>
+				<li value="27">Animals</li>
+				<li value="28">Vehicles</li>
+				<li value="29">Comics</li>
+				<li value="30">Gadgets</li>
+				<li value="31">Anime &amp; Manga (JP)</li>
+				<li value="32">Cartoon &amp; Animations</li>
+			</ul>
+		</dir>
+
+		<div class="setQuiz" id="setDiff" hidden>
+			<!-- <p>Please select question difficulty</p> -->
+			<p></p>
+			<ul hidden>
+				<li value="easy">Easy</li>
+				<li value="medium">Medium</li>
+				<li value="hard">Hard</li>
+				<li>Any difficulty</li>
+			</ul>
+		</div>
+
+		<div class="setQuiz" id="setType" hidden>
+			<p>Please choose the type of the questions</p>
+			<ul>
+				<li value="multiple">Multiple Choice</li>
+				<li value="boolean">True / False</li>
+				<li>Any Type</li>
+			</ul>
+		</div>
+
+		<section id="quiz" hidden>
+			
+		</section>
+
+		<section id="noQuestion" hidden>
+			<h2>Sorry, there's no question available, please choose another difficulty.</h2>
+		</section>
+
+		<section id="gameOver" hidden>
+			<h1>GAME OVER</h1>
+			<div id="startAgain">New Game</div>
+		</section>
+	</section>
+
+	<script src="js/vendor/jquery-3.0.0.min.js"></script>
+    <script src="js/vendor/underscore-min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

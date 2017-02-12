@@ -1,0 +1,752 @@
+body {
+	width: 1280px;
+	background-color: #F5F5F5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: helvetica, sans-serif;
+	font-family:'Lato', sans-serif;
+	font-size: 24px;
+	background-color: #E8E8E8;
+	margin: auto;
+}
+
+#index {
+	background-color: white;
+}
+
+#title {
+	font-family: 'Mystery Quest', cursive;
+	font-size: 3.5em;
+	letter-spacing: .1em;
+	margin-top: 10px;
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;
+}
+
+.container  {
+	width: 100%;
+	height: 480px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 5px;
+}
+
+#start {
+	width: 450px;
+	text-align: center;
+	margin: auto;
+}
+
+#start div {
+	width: 150px;
+	font-family: 'UnifrakturMaguntia', cursive;
+	font-size: 1.2em;
+	margin: auto;
+	margin-top: 30px;
+	border: 3px ridge black;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+
+#start div:hover {
+	box-shadow: 5px 4px 3px gray;
+	background-color: brown;
+	color: yellow;
+	-webkit-transition: all 1s, transform 0.3s;
+	-moz-transition: all 1s, transform 0.3s;
+	-o-transition: all 1s, transform 0.3s;
+	transition: all 1s, transform 0.3s
+}
+
+#start div:active {
+	box-shadow: 2px 1px 1px black;
+	transform: translateY(3px);
+}
+
+.welcome_msg{
+	width: 50%;
+	color: white;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 1.7em;
+	height: 100px;
+	margin: auto;
+	padding-top: 200px;
+	text-align: center;
+}
+
+#message4 {
+	display: none;
+}
+
+#askName, #askGender {
+	width: 40%;
+	height: 300px;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 1.7em;
+	margin: auto;
+	text-align: center;
+	padding-top: 120px;
+}
+
+#askName p {
+	margin: 15px;
+}
+
+input {
+	width: 250px;
+	font-family: 'Reenie Beanie', cursive;
+	font-size: 32px;
+	text-align: center;
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	padding: 0;
+
+}
+
+#nameOk {
+	width: 100px;
+	height: 30px;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 0.5em;
+	background-color: silver;
+	border: 1px groove black;
+	border-radius: 3px;
+	padding-top: 7px;
+	margin: auto;
+	margin-top: 20px;
+	cursor: pointer;
+	box-shadow: 5px 5px 3px gray;
+	-webkit-transition: all 1s, transform 0.3s;
+	-moz-transition: all 1s, transform 0.3s;
+	-o-transition: all 1s, transform 0.3s;
+	transition: all 1s, transform .3s;
+}
+
+#nameOk:active {
+	box-shadow: 2px 1px 1px black;
+	transform: translateY(3px);
+}
+
+#askGender img {
+	width: 100px;
+	margin: 20px;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+
+#askGender img:hover {
+	width: 120px;
+	cursor: pointer;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	font-size: 40px;
+	padding: 0;
+	padding-top: 10px;
+	text-align: center;
+	/*border-bottom: 2px dotted gray;*/
+	background-color: #87C4D6;
+	box-shadow: 0 4px 2px gray;
+}
+
+header h1 {
+	width: 500px;
+	margin: auto;
+	color: orange;
+	font-family: 'Megrim', cursive;
+	text-shadow: 4px 3px 2px black;
+}
+
+#menu {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-color: #5E5E5E;
+	color: #4AD2FF;
+	position: absolute;
+	margin: 20px 0 0 30px;
+	box-shadow: 3px 3px 1px #363636;
+	cursor: pointer;
+	visibility: visible;
+}
+
+#menu:active{
+	box-shadow: 1px 1px .3px black;
+	transform: translateY(2px);
+}
+
+li {
+	list-style-type: none;
+}
+
+#gameArea {
+	background-color: #E8E8E8;
+	height: auto;
+	float: right;
+	width: 1025px;
+	z-index: -10;
+	position: relative;
+}
+
+#gameArea li, #items, #store, #itemList li, #productList li{
+	cursor: pointer;
+}
+
+
+#playerInfo {
+	width: 250px;
+	height: auto;
+	color: yellow;
+	background-color: #4D4D4D;
+	float: left;
+	font-family: 'Righteous', cursive;
+	text-shadow: 2px 1px 1px black;
+	font-size: 24px;
+	box-shadow: 4px 4px 2px gray;
+	display: block;
+}
+
+#playerInfo img {
+	width: 100px;
+	margin: 10px;
+
+}
+
+#playerInfo #name {
+	font-family: 'Baloo Da', cursive;
+	font-size: 36px;
+	margin-top: 35px;
+	margin-right: 40px;
+	color: orange;
+	text-shadow: 2px 2px 1px black;
+}
+
+#playerInfo ul {
+	padding-left: 30px;
+}
+
+#playerInfo li {
+	margin-bottom: 5px;
+}
+
+#playerInfo span {
+	float: right;
+	margin-right: 15px;
+}
+
+#items, #store {
+	color: #00FFEE;
+	text-shadow: 4px 4px 2px gray;
+}
+
+#items:active, #store:active {
+	text-shadow: 2px 2px 1px black;
+	transform: translateY(2px);
+}
+
+#itemList, #productList {
+	width: 150px;
+	height: auto;
+	overflow: hidden;
+	background-color: black;
+	color: white;
+	font-size: 16px;
+	display: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px 20px 5px 20px;
+}
+
+#itemList li:nth-child(4) {
+	color: gray;
+}
+
+
+.confirmUseItem {
+	width: 90%;
+	height: 100px;
+	text-align: center;
+	font-family:'Lato', sans-serif;
+	border-radius: 2px;
+	background-color: #FFCE3B;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: 5px 5px 2px black;
+	text-shadow: none;
+}
+
+.confirmUseItem p {
+	font-family: 'UnifrakturMaguntia', cursive;
+	color: #1144BA;
+	font-size: 28px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px .8px black;
+}
+
+.confirmUseItem div {
+	width: 60px;
+	height: 30px;
+	font-family: 'Baloo Da', cursive;
+	font-size: 20px;
+	background-color: #87C4D6;
+	color: #4D4D4D;
+	float: left;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-left: 15px;
+	cursor: pointer;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s
+}
+
+.confirmUseItem .yes {
+	margin-left: 35px;
+}
+
+.confirmUseItem div:hover {
+	text-shadow: 1px 1px .5px gray;
+	box-shadow: 3px 3px 2px gray;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s
+}
+
+
+
+.confirmUseItem div:active {
+  box-shadow: 0 1px 1px #4D4D4D;
+  transform: translateY(2px);
+}
+
+#useElixir p {
+	font-family: 'Righteous', cursive;
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-shadow: none;
+}
+
+#itemList li, #productList li {
+	margin-top: 3px;
+}
+
+#itemList li span, #productList li span{
+	margin-right: 0;
+}
+
+#itemList li:hover, #productList li:hover {
+	background-color: white;
+	color:black;
+	text-shadow: none;
+}
+
+#quiz, .setQuiz {
+	width: 95%;
+	height: 450px;
+	margin: 0;
+	margin-left: 1%;
+	padding-left: 20px;
+	margin-top: 10px;
+	float: left;
+}
+
+.setQuiz p {
+	font-family: 'VT323', monospace;
+	font-size: 32px;
+	height: 50px;
+	font-size: 1.5em;
+	text-shadow: 2px 2px 1px #ABABAB;
+	color: #00660F;
+	margin: 0;
+	margin-top: 10px;
+	letter-spacing: 0.2em;
+}
+
+.setQuiz li {
+	width: 200px;
+	height: auto;
+	border: 1px dotted black;
+	font-size: 16px;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 15px;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-radius: 5px;
+	background-color: #F0DC00;
+	color: #B000F0;
+	-webkit-transition: all 1s, transform .2s;
+	-moz-transition: all 1s, transform .2s;
+	-o-transition: all 1s, transform .2s;
+	transition: all 1s, transform .2s;
+}
+
+.setQuiz li:hover {
+	background-color: #4D4D4D;
+	color: yellow;
+	box-shadow: 5px 4px 2px gray;
+	font-style: italic;
+	letter-spacing: 3px;
+}
+
+.setQuiz li:active {
+	box-shadow: 1px 1px .5px black;
+	transform: translateY(3px);
+}
+
+#quiz h3 {
+	text-shadow: 1px 1px .5px gray;
+}
+
+#quiz p {
+	width: 450px;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 32px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+#quiz #diff {
+	font-size: 16px;
+	margin-top: 5px;
+	margin-right: 30px;
+	text-shadow: none;
+	text-align: right;
+}
+
+#quiz li {
+	width: 450px;
+	font-size: 24px;
+	padding: 5px;
+	background-color: #D2F067;
+	color: #404040;
+	margin-bottom: 20px;
+	border: 2px dotted gray;
+	border-radius: 2px;
+	box-shadow: 4px 4px 2px gray;
+	-webkit-transition: transform .1s;
+	-moz-transition: transform .1s;
+	-o-transition: transform .1s;
+	transition: transform .1s;
+}
+
+#quiz li:hover {
+	background-color: orange;
+}
+
+#quiz li:active {
+	box-shadow: 1px 1px 1px black;
+	transform: translateY(3px);
+}
+
+#result {
+	width: 50px;
+	position: absolute;
+    top: 200px;
+    right: 35%;
+}
+
+#level, #hp, #exp, #coins {
+	-webkit-transition: 3s;
+	-moz-transition: 3s;
+	-o-transition: 3s;
+	transition: 3s;
+}
+
+#noQuestion {
+	width: 70%;
+	height: 150px;
+	font-family: 'Mystery Quest', cursive;
+	font-size: 18px;
+	margin-left: 5%;
+	margin-top: 100px;
+	text-align: center;
+	float: left;
+}
+
+#gameOver {
+	width: 70%;
+	text-align: center;
+	margin: auto;
+	margin-top: 100px;
+}
+
+#gameOver h1 {
+	font-family: 'Nosifer', cursive;
+	margin-top: 30px;
+}
+
+#gameOver div {
+	width: 200px;
+	height: 40px;
+	font-family: 'UnifrakturMaguntia', cursive;
+	margin-top: 50px;
+	margin: auto;
+	border: 1px solid black;
+	cursor: pointer;
+	border-radius: 3px;
+	padding-top: 15px;
+}
+
+#gameOver div:hover {
+	box-shadow: 5px 4px 3px gray;
+	background-color: brown;
+	color: yellow;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s; 
+}
+
+#gameOver div:active {
+	box-shadow: 2px 1px 1px black;
+	transform: translateY(3px);
+}
+
+footer {
+	font-size: 16px;
+	text-align: center;
+}
+
+footer a {
+	text-decoration: none;
+	color: green;
+}
+
+
+@media screen and (max-width: 1260px) {
+	#gameArea {
+		width: 760px;
+		height: auto;
+		float: left;
+	}
+
+	.setQuiz li {
+		margin-top: 15px;
+		margin-bottom: 0;
+	}
+
+	.setQuiz ul {
+		margin: 0;
+	}
+
+	.setQuiz p {
+		font-size: 28px;
+		letter-spacing: .1em;
+	}
+
+	#result {
+		right: 15%;
+	}
+}
+ 
+@media screen and (max-width: 1024px) {
+	body{
+		width: 100%;
+	}
+	
+	header {
+		position: fixed;
+		font-size: 1.2em;
+	}
+
+	header h1 {
+		padding-top: 15px;
+	}
+
+	#menu {
+		font-size: 40px;
+	}
+
+	#playerInfo {
+		width: 100%;
+		height: 160px;
+		font-size: 20px;
+		margin-top: 110px;
+		display: none;
+		/*position: fixed;*/
+	}
+
+	#gameArea {
+		width: 100%;
+		margin-top: 110px;
+		position: fixed;
+		overflow: scroll;
+	}
+
+	#basicInfo {
+		width: 180px;
+		height: 120px;
+		float: left;
+		margin-left: 15px;
+	}
+
+	#playerInfo #name, #playerInfo img  {
+		float: left;
+	}
+
+	#playerInfo #name {
+		margin-right: 15px;
+	}
+
+	#playerInfo img {
+		margin-top: 15px;
+	}
+
+	#playerInfo > ul {
+		margin-top: 10px;
+		
+	}
+
+	#playerInfo ul {
+		padding-left: 10px;
+	}
+
+	#items, #store {
+		float: left;
+	}
+	#itemMenu, #storeMenu {
+		width: 150px;
+		height: 120px;
+		float: left;
+		margin-left: 40px;
+	}
+
+	#itemMenu {
+		margin-left: 20px;
+	}
+
+	#itemList, #productList {
+		padding: 0;
+	}
+
+	#itemList li, #productList li {
+		width: 140px;
+		float: left;
+	}
+	#productList {
+		margin-right: 0;
+	}
+
+	.confirmUseItem{
+		position: relative;
+		padding-left: 7px;
+	}
+
+	.confirmUseItem p {
+		font-size: 20px;
+		margin-top: 0;
+		text-shadow: none;
+		float: left;
+	}
+
+	.confirmUseItem div {
+		width: 50px;
+		margin-left: 10px;
+	}
+
+	.confirmUseItem .yes {
+		margin-left: 5px;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.container {
+		width: 100%;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	#askName, #askGender {
+		padding-top: 100px;
+		font-size: 28px;
+	}
+
+	#askGender img {
+		width: 50px;
+	}
+	#askGender img:hover {
+		width: 80px;
+	}
+
+	header {
+		padding-top: 25px;
+		font-size: 28px;
+		height: 90px;
+	}
+
+	header h1 {
+		padding-top: 0;
+	}
+
+	#menu {
+		margin-top: 5px;
+		font-size: 36px;
+	}
+
+	#playerInfo {
+		height: 310px;
+	}
+
+	#playerInfo img {
+		margin-top: 30px;
+	}
+
+	#playerInfo#name {
+		margin-top: 50px;
+	}
+
+	#basicInfo{
+		margin-top: 20px;
+		margin-left: 50px;
+	}
+
+	#items, #store {
+		margin-top: 15px;
+		margin-left: 50px;
+	}
+	
+	#itemMenu {
+		clear: left;
+	}
+
+	#quiz h3 {
+		font-size: 22px;
+	}
+
+	#quiz li {
+		width: 250px;
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	body {
+		width: 450px;
+	}
+
+	header {
+		font-size: 22px;
+	}
+}
