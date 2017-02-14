@@ -92,7 +92,7 @@ $(document).ready(function() {
 		welcomMsg: function() {
 			var path = window.location.pathname;
 			console.log(path);
-			if (path === "/") {
+			if (path === "/trivia_master/") {
 				setTimeout(function() {
 					App.showMessage($("#message1"));
 				}, 1500); 
