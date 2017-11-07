@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-	var URL = "https://accesscontrolalloworiginall.herokuapp.com/https://www.opentdb.com/api.php?amount=10&type=multiple";
+	var URL =
+	"https://accesscontrolalloworiginall.herokuapp.com/https://www.opentdb.com/api.php?amount=10&type=multiple";
 
 	var expTable = [11, 25, 57, 84, 129, 192, 283, 406, 537, 688, 861, 1050];
 	var hpTable = [5, 9, 15, 23, 30, 38, 47, 55, 64, 76, 83, 90];
@@ -24,7 +25,7 @@ $(document).ready(function() {
 		this.exp = 0;
 		this.expForLvUp = 11;
 		this.hp = 5;
-		this.maxHp = 5
+		this.maxHp = 5;
 		this.coins = 50;
 		this.hints = 5;
 		this.potion = 3;
@@ -59,10 +60,11 @@ $(document).ready(function() {
 		currentQuestions: [],
 
 		chooseGame: function() {
-			if (localStorage.getItem('name') === null || localStorage.getItem('hp')<1) {
+			if (localStorage.getItem('name') === null ||
+			 localStorage.getItem('hp')<1) {
 				$('#loadGame').css('visibility', 'hidden');
-				$('#newGame').css({'float': 'none', 
-								   'width': '150px', 
+				$('#newGame').css({'float': 'none',
+								   'width': '150px',
 								   'margin':'auto',
 								   'margin-top': '70px'});
 			}
@@ -72,7 +74,7 @@ $(document).ready(function() {
 			}, 1000);
 			setTimeout(function() {
 				$('#title').css({'text-shadow':'6px 6px 3px #666666',
-								 'transform':'translateX(-3px)'})
+								 'transform':'translateX(-3px)'});
 			}, 2500);
 			setTimeout(function() {
 				$('footer').fadeIn(2000);
@@ -94,19 +96,19 @@ $(document).ready(function() {
 			if (path === "/trivia_master/") {
 				setTimeout(function() {
 					App.showMessage($("#message1"));
-				}, 1500); 
+				}, 1500);
 				setTimeout(function() {
 					App.eraseText($("#message1"));
 				}, 4000);
 				setTimeout(function() {
 					App.showMessage($("#message2"));
-				}, 6500); 
+				}, 6500);
 				setTimeout(function() {
 					App.eraseText($("#message2"));
 				}, 9500);
 				setTimeout(function() {
 					App.showMessage($("#message3"));
-				}, 11500); 
+				}, 11500);
 				setTimeout(function() {
 					App.eraseText($("#message3"));
 				}, 14500);
@@ -156,7 +158,9 @@ $(document).ready(function() {
 			$('#nameOk').on('click', function() {
 				$('#askName .warning').remove();
 				if($('#askName input').val().trim() === "") {
-					$('#askName').append("<p class='warning'>Please enter your name</p>");
+					$('#askName').append(
+						"<p class='warning'>Please enter your name</p>"
+					);
 				} else {
 					playerInfo[0] = $('#askName input').val();
 					$('#askName').fadeOut(1000);
@@ -177,14 +181,14 @@ $(document).ready(function() {
 				$('#askGender').fadeOut(2000);
 				App.createPlayer();
 				var playerName = localStorage.getItem('name');
-				var message = "OK , " + playerName + ". Let's start the game."
+				var message = "OK , " + playerName + ". Let's start the game.";
 				setTimeout(function() {
 					$('#message4').css('display', 'block');
 				}, 2500);
 				$('#message4').html(message);
 				setTimeout(function() {
 					App.showMessage($("#message4"));
-				}, 3500); 
+				}, 3500);
 				setTimeout(function() {
 					App.eraseText($("#message4"));
 				}, 7000);
@@ -208,7 +212,7 @@ $(document).ready(function() {
 			localStorage.setItem('hints', newPlayer.hints);
 			localStorage.setItem('potion', newPlayer.potion);
 			localStorage.setItem('capsule', newPlayer.capsule);
-			localStorage.setItem('capsuleUsed', newPlayer.capsuleUsed)
+			localStorage.setItem('capsuleUsed', newPlayer.capsuleUsed);
 			localStorage.setItem('elixir', newPlayer.elixir);
 		},
 
@@ -236,12 +240,12 @@ $(document).ready(function() {
 					}
 					if ($(window).width() <= 1024) {
 						$('#playerInfo').css('display', 'none');
-					} 
-				})
-				
+					}
+				});
+
 				$('#menu').click(function() {
 					$('#playerInfo').slideToggle();
-				})
+				});
 			}
 		},
 
@@ -295,7 +299,7 @@ $(document).ready(function() {
 				$('.confirmUseItem').hide();
 				$('#itemList').show();
 				$('#quiz ul').show();
-			});			
+			});
 		},
 
 		storeMenu: function() {
@@ -306,7 +310,7 @@ $(document).ready(function() {
 				var item = $(this).attr('value');
 				var itemPrice = parseInt($(this).children('span').text());
 				App.purchaseItem(item, itemPrice);
-			})
+			});
 		},
 
 		setQuizCategory: function() {
@@ -314,28 +318,34 @@ $(document).ready(function() {
 			var page = path.split("/").pop();
 			if (page === "game.html") {
 				setTimeout(function() {
-					App.showText('#setCategory p', 'Please choose a question category', 0, 30);
+					App.showText(
+						'#setCategory p', 'Please choose a question category',
+						0,
+						30
+					);
 				}, 1500);
 				$('#gamePage').fadeIn(2000);
 				setTimeout(function() {
 					$('#setCategory ul').fadeIn(1500);
 				}, 3000);
 			}
-				
+
 			$('#setCategory li').click(function() {
-				
+
 				quizType[0] = $(this).attr('value');
 				$('#setCategory').fadeOut(1000);
 				setTimeout(function() {
-					$('#setDiff').fadeIn(1500)
+					$('#setDiff').fadeIn(1500);
 				}, 1000);
 				setTimeout(function() {
-					App.showText('#setDiff p', 'Please select question difficulty', 0, 30);
+					App.showText(
+						'#setDiff p', 'Please select question difficulty', 0, 30
+					);
 				}, 2000);
 				setTimeout(function() {
-					$('#setDiff ul').fadeIn(1500)
+					$('#setDiff ul').fadeIn(1500);
 				}, 3500);
-			})
+			});
 		},
 
 		setQuizDiff: function() {
@@ -344,20 +354,24 @@ $(document).ready(function() {
 				$('#setDiff').fadeOut(1500);
 				App.sendUrl();
 				setTimeout(function() {
-					$('#quiz').fadeIn(1000)
+					$('#quiz').fadeIn(1000);
 				}, 3000);
-			})
+			});
 		},
 
-		showText: function (target, message, index, interval) {   
+		showText: function (target, message, index, interval) {
 		  if (index < message.length) {
 		    $(target).append(message[index++]);
-		    setTimeout(function () { App.showText(target, message, index, interval); }, interval);
+		    setTimeout(function () {
+					App.showText(target, message, index, interval);
+				}, interval);
 		  }
 		},
 
 		sendUrl: function() {
-			var newQuersions = new setQuestions(quizType[0], quizType[1], quizType[2]);
+			var newQuersions = new setQuestions(
+				quizType[0], quizType[1], quizType[2]
+			);
 			App.showQuestions(newQuersions);
 		},
 
@@ -407,8 +421,10 @@ $(document).ready(function() {
 
 				if (i===10) {
 					setTimeout(function() {
-						$('#quiz').html("<p>Please choose another category.</p>");
-					}, 1500)
+						$('#quiz').html(
+							"<p>Please choose another category.</p>"
+						);
+					}, 1500);
 					setTimeout(function() {
 						$('#quiz').fadeIn(1500);
 					},2000);
@@ -426,16 +442,19 @@ $(document).ready(function() {
 
 		formatResponse: function(questions) {
 			App.currentQuestions = questions.results;
-			console.log(App.currentQuestions);
 			var correctAnswerIndex = _.random(0,3);
 			for(var i=0; i<App.currentQuestions.length; i++) {
-				options[i] = JSON.parse(JSON.stringify(App.currentQuestions[i].incorrect_answers));
-				options[i].splice(correctAnswerIndex, 0, App.currentQuestions[i].correct_answer);
+				options[i] = JSON.parse(JSON.stringify(
+					App.currentQuestions[i].incorrect_answers
+				));
+				options[i].splice(
+					correctAnswerIndex,
+					0,
+					App.currentQuestions[i].correct_answer
+				);
 				App.currentQuestions[i].index = i+1;
 			}
 
-			console.log(options);
-			
 			for (var j=0; j<App.currentQuestions.length; j++) {
 				App.currentQuestions[j].first = options[j][0];
 				App.currentQuestions[j].second = options[j][1];
@@ -468,7 +487,7 @@ $(document).ready(function() {
 			return $.ajax(URL, {
 				dataType: "json",
 				data: data
-			})
+			});
 		},
 
 		judge: function(answer, correctAnswer, difficulty) {
@@ -572,17 +591,19 @@ $(document).ready(function() {
 				return;
 			} else {
 				var questionNumber = parseInt($('#qNum').text())-1;
-			
+
 				var eliminatedOptionIndex = _.random(0, App.currentQuestions[questionNumber].incorrect_answers.length-1);
-				var eliminatedOption = App.currentQuestions[questionNumber].incorrect_answers[eliminatedOptionIndex];
+				var eliminatedOption = App.currentQuestions[questionNumber].
+				incorrect_answers[eliminatedOptionIndex];
 
 				$('#quiz li').each(function() {
 					if($(this).attr("value") === eliminatedOption) {
 						$(this).fadeOut(1500);
 					}
-				})
-				App.currentQuestions[questionNumber].incorrect_answers.splice(eliminatedOptionIndex, 1);
-				
+				});
+				App.currentQuestions[questionNumber].
+				incorrect_answers.splice(eliminatedOptionIndex, 1);
+
 				hintNumber--;
 				$('#hints').text(hintNumber);
 				localStorage.setItem('hints', hintNumber);
@@ -594,7 +615,7 @@ $(document).ready(function() {
 			var maxHp = parseInt(localStorage.getItem("maxHp"));
 			var potionNumber = parseInt(localStorage.getItem("potion"));
 			if(hp === maxHp || potionNumber === 0) {return;}
-			hp+5>maxHp?hp=maxHp:hp+=5;
+			hp + 5 > maxHp ? hp = maxHp : hp += 5;
 			potionNumber--;
 			localStorage.setItem('hp', hp);
 			$('#hp').text(hp);
@@ -651,7 +672,7 @@ $(document).ready(function() {
 		purchaseItem: function(item, price) {
 			var coins = parseInt(localStorage.getItem('coins'));
 			var itemNumber = parseInt(localStorage.getItem(item));
-			var numberChange = $("#itemList li span[id="+item+"]");  
+			var numberChange = $("#itemList li span[id="+item+"]");
 
 			if(coins < price) {
 				return;
@@ -675,7 +696,7 @@ $(document).ready(function() {
 				setTimeout(function() {
 					location.reload();
 				}, 3000);
-			})
+			});
 			var name = localStorage.getItem('name');
 			var gender = localStorage.getItem('gender');
 			App.createPlayer();
